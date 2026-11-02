@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Este atributo solo existe a partir de Android 8.1 (API 27). -->
+    <style name="PremiumTheme" parent="Base.PremiumTheme">
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:padding="24dp">
+
+    <ImageView
+            android:id="@+id/imgAvatarPerfil"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_avatar_default"
+            android:background="@drawable/circle_white_bg"
+            android:scaleType="centerCrop"
+            android:elevation="4dp"
+            android:contentDescription="Avatar de usuario"/>
+
+    <EditText
+            android:id="@+id/etNombrePerfil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Nombre de usuario"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:inputType="textPersonName"/>
+
+</LinearLayout>
+

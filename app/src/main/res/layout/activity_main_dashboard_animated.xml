@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                           xmlns:app="http://schemas.android.com/apk/res-auto"
+                                           xmlns:tools="http://schemas.android.com/tools"
+                                           android:id="@+id/drawer_layout"
+                                           android:layout_width="match_parent"
+                                           android:layout_height="match_parent"
+                                           tools:openDrawer="start"
+                                           android:fitsSystemWindows="true">
+
+    <!-- Contenido Principal: CoordinatorLayout para efectos de scroll avanzados -->
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/surface_light_grey">
+
+        <!-- Indicador de carga superior -->
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/progress_loading"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:indicatorSize="40dp"
+                app:indicatorInset="0dp"/>
+
+        <!-- AppBarLayout para una barra de título dinámica y colapsable -->
+        <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                android:elevation="@dimen/elevation_header"
+                android:stateListAnimator="@animator/appbar_elevation">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:id="@+id/collapsing_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    app:contentScrim="@drawable/gradient_premium_header"
+                    app:statusBarScrim="@drawable/gradient_premium_header"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+                    app:titleEnabled="false"
+                    app:scrimAnimationDuration="400">
+
+                <!-- Fondo con gradiente premium -->
+                <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/cd_header_background"
+                        android:src="@drawable/gradient_premium_header"
+                        android:scaleType="centerCrop"
+                        app:layout_collapseMode="parallax"
+                        app:layout_collapseParallaxMultiplier="0.5"/>
+
+                <!-- Contenido del Header Colapsable con gradiente premium -->
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="329dp"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:padding="@dimen/spacing_xxlarge"
+                        app:layout_collapseMode="parallax"
+                        app:layout_collapseParallaxMultiplier="0.7">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/header_animation"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/dashboard_header_animation_cd"
+                            app:lottie_fileName="logo_animation.json"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"
+                            android:elevation="4dp"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/spacing_medium"
+                            android:text="@string/dashboard_title"
+                            android:fontFamily="sans-serif-medium"
+                            android:textSize="32sp"
+                            android:textColor="?attr/colorOnPrimary"
+                            android:letterSpacing="0.02"
+                            android:lineSpacingMultiplier="1.2"
+                            android:elevation="2dp"/>
+
+                    <TextView
+                            android:id="@+id/tv_subtitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/spacing_small"
+                            android:alpha="0.87"
+                            android:text="@string/dashboard_subtitle"
+                            android:fontFamily="sans-serif-light"
+                            android:textSize="18sp"
+                            android:letterSpacing="0.01"
+                            android:textColor="?attr/colorOnPrimary"/>
+
+                    <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_premium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/spacing_medium"
+                            android:text="@string/dashboard_premium_chip"
+                            android:textStyle="bold"
+                            android:textColor="@color/premium_chip_text"
+                            android:fontFamily="sans-serif-medium"
+                            app:chipBackgroundColor="@color/accent_gold"
+                            app:chipStrokeColor="@color/warning_amber"
+                            app:chipStrokeWidth="2dp"
+                            app:chipCornerRadius="@dimen/corner_radius_medium"
+                            android:elevation="6dp"
+                            app:rippleColor="@color/premium_ripple_gold"
+                            android:stateListAnimator="@animator/chip_scale_animation"
+                            android:minHeight="48dp"/>
+                </LinearLayout>
+
+                <!-- Toolbar Fija -->
+                <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        app:layout_scrollFlags="enterAlways"
+                        app:title=""
+                        android:background="@android:color/transparent"/>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!-- Contenido Principal Scrolleable -->
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipe_refresh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="none"
+                    android:overScrollMode="never">
+
+                <LinearLayout
+                        android:id="@+id/content_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/spacing_large"
+                        android:clipChildren="false"
+                        android:clipToPadding="false">
+
+                    <!-- Sección de KPIs (Indicadores Clave) -->
+                    <TextView
+                            style="?attr/textAppearanceHeadlineSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/spacing_medium"
+                            android:text="@string/dashboard_kpi_title"
+                            android:fontFamily="sans-serif-medium"
+                            android:textColor="@color/primary_elegant_black"
+                            android:letterSpacing="0.01"/>
+
+                    <GridLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:columnCount="2"
+                            android:useDefaultMargins="true"
+                            android:layout_marginBottom="@dimen/spacing_small">
+
+                        <!-- KPI Card 1: Materiales Escaneados -->
+                        <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/card_kpi_scanned"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/spacing_small"
+                                android:layout_columnWeight="1"
+                                app:cardUseCompatPadding="true"
+                                app:cardCornerRadius="@dimen/corner_radius_large"
+                                app:cardElevation="@dimen/elevation_cards"
+                                app:strokeWidth="1dp"
+                                app:strokeColor="@color/accent_platinum"
+                                app:cardBackgroundColor="?attr/colorSurface"
+                                android:outlineAmbientShadowColor="@color/accent_gold"
+                                android:outlineSpotShadowColor="@color/primary_deep_blue"
+                                android:stateListAnimator="@animator/card_elevation"
+                                android:foreground="?attr/selectableItemBackground">
+
+                            <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:contentDescription="@string/cd_kpi_scanned_container"
+                                    android:orientation="vertical"
+                                    android:gravity="center_horizontal"
+                                    android:padding="@dimen/spacing_large">
+
+                                <!-- Icono premium -->
+                                <ImageView
+                                        android:layout_width="48dp"
+                                        android:layout_height="48dp"
+                                        android:contentDescription="@string/cd_kpi_scanned_icon"
+                                        android:src="@drawable/ic_analytics"
+                                        android:layout_marginBottom="@dimen/spacing_small"
+                                        app:tint="@color/accent_gold"
+                                        tools:ignore="ImageContrastCheck"/>
+
+                                <TextView
+                                        android:id="@+id/tv_kpi_scanned"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="sans-serif-black"
+                                        android:textSize="28sp"
+                                        android:textColor="?attr/colorPrimary"
+                                        android:letterSpacing="0.02"
+                                        tools:text="1,450"/>
+
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/spacing_small"
+                                        android:text="@string/dashboard_kpi_scanned_label"
+                                        android:fontFamily="sans-serif-medium"
+                                        android:textSize="14sp"
+                                        android:textColor="?attr/colorOnSurfaceVariant"
+                                        android:letterSpacing="0.02"
+                                        android:gravity="center"/>
+
+                                <!-- Indicador de progreso premium -->
+                                <com.google.android.material.progressindicator.LinearProgressIndicator
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/spacing_medium"
+                                        app:indicatorColor="@color/accent_gold"
+                                        app:trackColor="@color/surface_medium_grey"
+                                        app:trackCornerRadius="8dp"
+                                        android:progress="75"/>
+
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- KPI Card 2: Sincronización -->
+                        <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/card_kpi_sync"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/spacing_small"
+                                android:layout_columnWeight="1"
+                                app:cardUseCompatPadding="true"
+                                app:cardCornerRadius="@dimen/corner_radius_large"
+                                app:cardElevation="@dimen/elevation_cards"
+                                app:strokeWidth="1dp"
+                                app:strokeColor="@color/accent_platinum"
+                                app:cardBackgroundColor="?attr/colorSurface"
+                                android:outlineAmbientShadowColor="@color/accent_gold"
+                                android:outlineSpotShadowColor="@color/primary_deep_blue"
+                                android:stateListAnimator="@animator/card_elevation"
+                                android:foreground="?attr/selectableItemBackground">
+
+                            <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:contentDescription="@string/cd_kpi_sync_container"
+                                    android:orientation="vertical"
+                                    android:gravity="center_horizontal"
+                                    android:padding="@dimen/spacing_large">
+
+                                <!-- Icono premium -->
+                                <ImageView
+                                        android:layout_width="48dp"
+                                        android:layout_height="48dp"
+                                        android:src="@drawable/ic_sync"
+                                        android:layout_marginBottom="@dimen/spacing_small"
+                                        app:tint="@color/success_green"
+                                        tools:ignore="ImageContrastCheck"/>
+
+                                <TextView
+                                        android:id="@+id/tv_kpi_sync"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="sans-serif-black"
+                                        android:textSize="28sp"
+                                        android:textColor="#388E3C"
+                                        android:letterSpacing="0.02"
+                                        tools:text="Online"/>
+
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/spacing_small"
+                                        android:text="@string/dashboard_kpi_sync_label"
+                                        android:fontFamily="sans-serif-medium"
+                                        android:textSize="14sp"
+                                        android:textColor="?attr/colorOnSurfaceVariant"
+                                        android:letterSpacing="0.02"
+                                        android:gravity="center"/>
+
+                                <!-- Indicador de progreso premium -->
+                                <com.google.android.material.progressindicator.LinearProgressIndicator
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/spacing_medium"
+                                        app:indicatorColor="@color/success_green"
+                                        app:trackColor="@color/surface_medium_grey"
+                                        app:trackCornerRadius="8dp"
+                                        android:progress="100"/>
+
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </GridLayout>
+
+                    <!-- Sección de Gráfico -->
+                    <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_xlarge"
+                            android:layout_marginBottom="@dimen/spacing_small"
+                            app:cardElevation="@dimen/elevation_cards"
+                            app:cardUseCompatPadding="true"
+                            app:cardCornerRadius="@dimen/corner_radius_large"
+                            app:cardBackgroundColor="?attr/colorSurface"
+                            app:strokeColor="@color/accent_platinum"
+                            app:strokeWidth="1dp"
+                            android:outlineAmbientShadowColor="@color/accent_gold"
+                            android:outlineSpotShadowColor="@color/primary_deep_blue"
+                            android:stateListAnimator="@animator/card_elevation">
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="@dimen/spacing_xlarge">
+
+                            <TextView
+                                    style="?attr/textAppearanceHeadlineSmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/spacing_medium"
+                                    android:text="@string/dashboard_chart_title"
+                                    android:fontFamily="sans-serif-medium"
+                                    android:textColor="@color/primary_elegant_black"
+                                    android:letterSpacing="0.01"/>
+
+                            <com.github.mikephil.charting.charts.BarChart
+                                    android:id="@+id/bar_chart"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="240dp"
+                                    android:layout_marginTop="@dimen/spacing_small"/>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Sección de Acciones Rápidas -->
+                    <TextView
+                            style="?attr/textAppearanceHeadlineSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_xxlarge"
+                            android:layout_marginBottom="@dimen/spacing_medium"
+                            android:text="@string/dashboard_quick_actions_title"
+                            android:fontFamily="sans-serif-medium"
+                            android:textColor="@color/primary_elegant_black"
+                            android:letterSpacing="0.01"/>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginBottom="@dimen/spacing_large">
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginBottom="@dimen/spacing_small">
+
+                            <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btn_scan"
+                                    style="@style/Widget.Material3.Button.UnelevatedButton"
+                                    android:layout_width="0dp"
+                                    android:layout_height="64dp"
+                                    android:layout_weight="1"
+                                    android:layout_marginEnd="@dimen/spacing_small"
+                                    android:text="@string/dashboard_scan_button"
+                                    android:fontFamily="sans-serif-medium"
+                                    android:textSize="16sp"
+                                    android:letterSpacing="0.02"
+                                    app:icon="@drawable/ic_qr_code_scanner"
+                                    app:iconSize="24dp"
+                                    app:iconGravity="textStart"
+                                    app:iconPadding="@dimen/spacing_small"
+                                    app:cornerRadius="@dimen/corner_radius_medium"
+                                    app:backgroundTint="@color/primary_deep_blue"
+                                    app:iconTint="@color/accent_gold"
+                                    app:rippleColor="@color/premium_ripple_primary"
+                                    android:textColor="@color/premium_text_on_primary"
+                                    android:elevation="@dimen/elevation_buttons"
+                                    android:stateListAnimator="@animator/button_elevation"/>
+
+                            <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/btn_view_inventory"
+                                    style="@style/Widget.Material3.Button.OutlinedButton"
+                                    android:layout_width="0dp"
+                                    android:layout_height="64dp"
+                                    android:layout_marginStart="@dimen/spacing_small"
+                                    android:layout_weight="1"
+                                    android:text="@string/dashboard_view_inventory_button"
+                                    android:fontFamily="sans-serif-medium"
+                                    android:textSize="16sp"
+                                    android:letterSpacing="0.02"
+                                    app:icon="@drawable/ic_inventory"
+                                    app:iconSize="24dp"
+                                    app:iconGravity="textStart"
+                                    app:iconPadding="@dimen/spacing_small"
+                                    app:cornerRadius="@dimen/corner_radius_medium"
+                                    app:strokeColor="@color/primary_deep_blue"
+                                    app:strokeWidth="2dp"
+                                    app:rippleColor="@color/premium_ripple_primary"
+                                    android:textColor="@color/primary_deep_blue"
+                                    android:stateListAnimator="@animator/button_elevation"/>
+                        </LinearLayout>
+
+                        <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btn_test_perplexity"
+                                style="@style/Widget.Material3.Button.TonalButton"
+                                android:layout_width="match_parent"
+                                android:layout_height="64dp"
+                                android:text="@string/test_perplexity_api"
+                                android:fontFamily="sans-serif-medium"
+                                android:textSize="16sp"
+                                android:letterSpacing="0.02"
+                                app:icon="@drawable/ic_search"
+                                app:iconSize="24dp"
+                                app:iconGravity="textStart"
+                                app:iconPadding="@dimen/spacing_small"
+                                app:cornerRadius="@dimen/corner_radius_medium"
+                                app:backgroundTint="@color/surface_light_grey"
+                                app:rippleColor="@color/premium_ripple_secondary"
+                                android:textColor="@color/primary_elegant_black"
+                                android:elevation="2dp"
+                                android:stateListAnimator="@animator/button_elevation"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <!-- FAB Acción Rápida (Escanear) -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_quick_scan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/tip_scan"
+                app:srcCompat="@drawable/ic_qr_code_scanner"
+                app:backgroundTint="@color/primary_deep_blue"
+                app:tint="@color/accent_gold"
+                android:layout_margin="16dp"
+                app:layout_anchorGravity="bottom|end"
+                app:maxImageSize="32dp"
+                app:borderWidth="0dp"
+                app:useCompatPadding="true"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <!-- Menú Lateral de Navegación -->
+    <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:elevation="16dp"
+            app:headerLayout="@layout/header_nav"
+            app:menu="@menu/menu_lateral"
+            app:itemTextAppearance="@style/NavigationView.TextAppearance"
+            app:itemIconTint="@color/navigation_item_color_state"
+            app:itemTextColor="@color/navigation_item_color_state"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>

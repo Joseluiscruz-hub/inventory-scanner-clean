@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_ajuste_inventario">Ajuste de Inventario</string>
+    <string name="subtitle_ajuste_inventario">Selecciona la cantidad correcta y captura el motivo del ajuste.</string>
+    <string name="subtitle_ajuste_appbar">Edita cantidades con autorización de gerencia</string>
+    
+    <string name="auth_gerencia_title">Autorización de gerente</string>
+    <string name="auth_gerencia_message">La autorización se validará con la sesión de Firebase y requiere el rol ADMIN.</string>
+    <string name="nombre_gerente">Nombre del gerente</string>
+    
+    <string name="btn_autorizar">AUTORIZAR</string>
+    <string name="btn_cancelar">CANCELAR</string>
+    <string name="btn_guardar">GUARDAR</string>
+    <string name="btn_limpiar">Limpiar</string>
+    <string name="btn_generar_ajuste">GENERAR AJUSTE</string>
+    <string name="btn_registrar_ajuste">Registrar ajuste</string>
+    <string name="btn_editar_ajuste">Editar ajuste</string>
+
+    <string name="label_cantidad_correcta">Cantidad correcta</string>
+    <string name="label_motivo_ajuste">Motivo del ajuste</string>
+    <string name="label_diferencia">Diferencia</string>
+    <string name="label_actual">Actual</string>
+    <string name="label_correcta">Correcta</string>
+    <string name="label_almacen">Almacén</string>
+    <string name="label_tipo">Tipo</string>
+    <string name="label_ubicacion">Ubicación</string>
+    <string name="label_en_borrador">En borrador</string>
+
+    <string name="title_resumen">Resumen</string>
+    <string name="label_escaneos_cargados">Escaneos cargados</string>
+    <string name="label_ajustes_borrador">Ajustes en borrador</string>
+    <string name="label_operador">Operador</string>
+    <string name="msg_edicion_deshabilitada">La edición directa está deshabilitada. Selecciona un registro, define la cantidad correcta y captura el motivo.</string>
+
+    <string name="title_borrador_ajuste">Borrador de ajuste</string>
+    
+    <string name="hint_buscar_sku">Buscar por SKU, descripción, almacén o ubicación</string>
+    
+    <string name="empty_list">No hay escaneos para mostrar</string>
+    <string name="list_escaneos">Listado de escaneos</string>
+    <string name="sin_descripcion">Sin descripción</string>
+
+    <string name="empty_state_title">No hay registros cargados</string>
+    <string name="empty_state_desc">Cuando existan escaneos, aparecerán aquí para que puedas ajustar cantidades con control de gerencia.</string>
+
+    <string name="error_nombre_gerente">Captura el nombre del gerente</string>
+    <string name="error_cantidad_invalida">Ingresa una cantidad válida</string>
+    <string name="error_cantidad_negativa">La cantidad no puede ser negativa</string>
+    <string name="error_motivo_vacio">Captura el motivo del ajuste</string>
+    <string name="error_sin_diferencia">No hay diferencia para ajustar</string>
+    <string name="error_no_ajustes">No hay ajustes pendientes</string>
+    
+    <string name="msg_ajuste_borrador">Ajuste agregado al borrador</string>
+
+</resources>

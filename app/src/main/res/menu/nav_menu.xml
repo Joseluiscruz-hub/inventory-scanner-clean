@@ -1,0 +1,50 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_inicio"
+        android:title="Inicio" />
+    <item
+        android:id="@+id/nav_capturar_inventario"
+        android:title="Capturar Inventario" />
+    <item
+        android:id="@+id/nav_dashboard"
+        android:title="Dashboard Ejecutivo" />
+    <item
+        android:id="@+id/nav_dashboard_comparacion"
+        android:title="Dashboard Comparación" />
+    <item
+        android:id="@+id/nav_comparar_inventarios"
+        android:title="Comparar Inventarios" />
+    <item
+        android:id="@+id/nav_comparacion_tiempo_real"
+        android:title="Comparación Tiempo Real" />
+    <item
+        android:id="@+id/nav_traspasos"
+        android:title="Traspasos" />
+    <item
+        android:id="@+id/nav_gestion_almacenes"
+        android:title="Gestión de Almacenes" />
+    <item
+        android:id="@+id/nav_ajuste_inventario"
+        android:title="Ajuste Inventario" />
+    <item
+        android:id="@+id/nav_importar"
+        android:title="Importar" />
+    <item
+        android:id="@+id/nav_exportar"
+        android:title="Exportar" />
+    <item
+        android:id="@+id/nav_gestion_reinicio"
+        android:title="Gestión de Reinicio" />
+    <item
+        android:id="@+id/nav_configuracion"
+        android:title="Configuración" />
+    <item
+        android:id="@+id/nav_centro_ayuda"
+        android:title="Centro de Ayuda" />
+    <item
+        android:id="@+id/nav_feedback"
+        android:title="Feedback" />
+    <item
+        android:id="@+id/nav_mas_opciones"
+        android:title="Más Opciones" />
+</menu>

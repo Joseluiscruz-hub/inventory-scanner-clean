@@ -1,0 +1,52 @@
+# Project exclude paths
+/.gradle/
+/build/
+
+# Local Android SDK
+local.properties
+
+# Build outputs
+app/build/
+*.apk
+*.aab
+*.ap_
+
+# IDE files
+.idea/
+*.iml
+*.iws
+.DS_Store
+desktop.ini
+
+# Kotlin error logs
+.kotlin/
+
+# JVM crash logs
+hs_err_pid*.log
+replay_pid*.log
+
+# Análisis estático y dependencias (archivos pesados, generados)
+qodana.sarif.json
+compose_deps.txt
+node_modules/
+
+# Compile scripts (local tools)
+compile.bat
+
+# Firebase configuration — add your own google-services.json locally
+# See: https://firebase.google.com/docs/android/setup
+# IMPORTANT: The existing google-services.json in this repo must be revoked
+# and replaced with a new one. Do NOT commit new API keys.
+app/google-services.json
+firebase-service-account.json
+service-account*.json
+
+# Copias reales de Room para pruebas locales; pueden contener datos operativos.
+app/src/androidTest/assets/real-db/*.db
+app/src/androidTest/assets/real-db/*.db-wal
+app/src/androidTest/assets/real-db/*.db-shm
+
+# Release signing — never commit secrets or keystores
+keystore.properties
+*.jks
+*.keystore

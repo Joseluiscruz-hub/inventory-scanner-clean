@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Contenido principal -->
+    <FrameLayout
+        android:id="@+id/mainContent"
+        android:background="#121212"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/particleBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:lottie_fileName="background_particles.json"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="true"
+            android:scaleType="centerCrop"
+            android:alpha="0.2" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/logoIntro"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginTop="48dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="false"
+            app:lottie_fileName="home_logo_intro.json"
+            android:visibility="visible"/>
+
+        <LinearLayout
+            android:id="@+id/contenidoPrincipal"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="24dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:src="@drawable/ic_inventory"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/logo_description"
+                android:layout_marginBottom="32dp"
+                android:alpha="0"/>
+
+            <TextView
+                android:id="@+id/txtFrase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nav_header_subtitle"
+                android:textColor="#B0BEC5"
+                android:textSize="16sp"
+                android:layout_marginBottom="24dp"/>
+
+            <Button
+                android:id="@+id/btnCapturar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/captura"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:textAllCaps="false"
+                android:layout_marginTop="8dp"/>
+
+            <Button
+                android:id="@+id/btnDashboard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dashboard"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:textAllCaps="false"
+                android:layout_marginTop="12dp"/>
+
+            <Button
+                android:id="@+id/btnConfiguracion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/configuracion"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:textAllCaps="false"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- Menú lateral -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/menu_lateral"
+        app:headerLayout="@layout/header_nav"
+        app:itemIconTint="#FFFFFF"
+        app:itemTextColor="#FFFFFF"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>

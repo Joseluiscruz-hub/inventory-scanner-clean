@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cmp_rt_titulo_toolbar">⚡ Comparación en Tiempo Real</string>
+    <string name="cmp_rt_estado_inicial">🔄 Sistema listo para comparar</string>
+    <string name="cmp_rt_sistema_no_cargado">📊 Sistema: No cargado</string>
+    <string name="cmp_rt_escaneados_cero">📱 Escaneados: 0</string>
+    <string name="cmp_rt_estadisticas_titulo">📈 Estadísticas en Tiempo Real</string>
+    <string name="cmp_rt_label_coincidencias">Coincidencias</string>
+    <string name="cmp_rt_label_faltantes">Faltantes</string>
+    <string name="cmp_rt_label_sobrantes">Sobrantes</string>
+    <string name="cmp_rt_label_precision">Precisión</string>
+    <string name="cmp_rt_instrucciones">📋 Abra el menú lateral para acceder a las funciones de comparación</string>
+</resources>
+

@@ -1,0 +1,106 @@
+rules_version = '2';
+
+// InventoryScannerPro — Firestore Security Rules
+//
+// Custom claims (Firebase Auth ID token):
+//   role   : "ADMIN" | "OPERADOR"  (required for any access)
+//   planta : string plant id       (required for OPERADOR; ADMIN may omit / cross plants)
+//
+// Document plant field mapping (do NOT invent alternate names):
+//   inventarios, inventario_referencia, traspasos_log, movimientos_inventario
+//     → field "planta" (matches CatalogoPlantaEntity.planta / claim "planta")
+//
+// Stock authority:
+//   Final stock fields (pallets / restos) on inventarios and all traspasos_log /
+//   movimientos_inventario writes are owned by Cloud Functions (Admin SDK).
+//   Clients may READ in-plant; clients may NOT write stock or transfer logs.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function role() {
+      return signedIn() ? request.auth.token.role : null;
+    }
+
+    function isAdmin() {
+      return role() == 'ADMIN';
+    }
+
+    function isOperatorOrAdmin() {
+      return role() in ['OPERADOR', 'ADMIN'];
+    }
+
+    // Claim name is "planta" (Spanish), matching local CatalogoPlantaEntity.
+    function claimPlanta() {
+      return signedIn() && 'planta' in request.auth.token
+        ? request.auth.token.planta
+        : null;
+    }
+
+    function hasPlantaClaim() {
+      return claimPlanta() is string && claimPlanta().size() > 0;
+    }
+
+    // Doc plant field is always "planta" across inventory collections.
+    function docPlanta(data) {
+      return data.keys().hasAny(['planta']) ? data.planta : null;
+    }
+
+    function samePlantAsClaim(data) {
+      return hasPlantaClaim() && docPlanta(data) == claimPlanta();
+    }
+
+    // ADMIN may cross plants. OPERADOR must match claim ↔ document.planta.
+    // Legacy docs without "planta" are readable only by ADMIN (migration gap).
+    function canReadPlantDoc(data) {
+      return isAdmin() || (isOperatorOrAdmin() && samePlantAsClaim(data));
+    }
+
+    function ownsAuthUid() {
+      return request.resource.data.authUid == request.auth.uid;
+    }
+
+    // ── inventarios (stock) ──────────────────────────────────────────
+    // Reads: in-plant operators / admin.
+    // Writes: denied for clients — Cloud Functions (Admin SDK) only.
+    match /inventarios/{documentId} {
+      allow read: if isOperatorOrAdmin() && canReadPlantDoc(resource.data);
+      allow create, update, delete: if false;
+    }
+
+    // ── inventario_referencia (SKU master / reference) ───────────────
+    // Field "planta" scopes reference rows per plant when present.
+    match /inventario_referencia/{documentId} {
+      allow read: if isOperatorOrAdmin() && canReadPlantDoc(resource.data);
+      allow create, update: if isAdmin()
+        && request.resource.data.keys().hasAll(['planta'])
+        && request.resource.data.planta is string
+        && request.resource.data.planta.size() > 0;
+      allow delete: if isAdmin();
+    }
+
+    // ── traspasos_log (transfer audit) ───────────────────────────────
+    // Written only by Functions. ADMIN may read all; OPERADOR in-plant.
+    match /traspasos_log/{documentId} {
+      allow read: if isAdmin()
+        || (isOperatorOrAdmin() && canReadPlantDoc(resource.data));
+      allow create, update, delete: if false;
+    }
+
+    // ── movimientos_inventario (scan / adjust audit from Functions) ──
+    match /movimientos_inventario/{documentId} {
+      allow read: if isAdmin()
+        || (isOperatorOrAdmin() && canReadPlantDoc(resource.data));
+      allow create, update, delete: if false;
+    }
+
+    // Deny-by-default catch-all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

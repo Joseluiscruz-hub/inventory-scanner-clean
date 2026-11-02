@@ -1,0 +1,28 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/category_general">
+
+        <EditTextPreference
+            app:key="usuario"
+            app:title="@string/pref_username"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:key="tipo_escaneo_default"
+            app:title="@string/pref_default_scan_type"
+            app:summary="%s"
+            app:defaultValue="RUMBA"
+            app:entries="@array/scan_types"
+            app:entryValues="@array/scan_types_values" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/category_appearance">
+
+        <SwitchPreferenceCompat
+            app:key="modo_oscuro"
+            app:title="@string/pref_dark_mode" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

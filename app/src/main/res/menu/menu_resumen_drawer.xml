@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/nav_resumen_general"
+                android:icon="@drawable/ic_info"
+                android:title="📊 Resumen General"/>
+
+        <item
+                android:id="@+id/nav_actualizar_datos"
+                android:icon="@drawable/ic_refresh"
+                android:title="🔄 Actualizar Datos"/>
+    </group>
+
+    <item android:title="📈 Análisis">
+        <menu>
+            <item
+                    android:id="@+id/nav_ver_tendencias"
+                    android:icon="@drawable/ic_info"
+                    android:title="📈 Ver Tendencias"/>
+
+            <item
+                    android:id="@+id/nav_comparacion_rapida"
+                    android:icon="@drawable/ic_refresh"
+                    android:title="⚡ Comparación Rápida"/>
+
+            <item
+                    android:id="@+id/nav_alertas_criticas"
+                    android:icon="@drawable/ic_info"
+                    android:title="🚨 Alertas Críticas"/>
+        </menu>
+    </item>
+
+    <item android:title="📁 Gestión de Datos">
+        <menu>
+            <item
+                    android:id="@+id/nav_exportar_resumen"
+                    android:icon="@drawable/ic_share"
+                    android:title="📤 Exportar Resumen"/>
+
+            <item
+                    android:id="@+id/nav_importar_inventario"
+                    android:icon="@drawable/ic_folder"
+                    android:title="📥 Importar Inventario"/>
+
+            <item
+                    android:id="@+id/nav_limpiar_datos"
+                    android:icon="@drawable/ic_delete"
+                    android:title="🗑️ Limpiar Datos"/>
+        </menu>
+    </item>
+
+    <item android:title="🔧 Herramientas">
+        <menu>
+            <item
+                    android:id="@+id/nav_capturar_inventario"
+                    android:icon="@drawable/ic_play_arrow"
+                    android:title="📷 Capturar Inventario"/>
+
+            <item
+                    android:id="@+id/nav_comparacion_tiempo_real"
+                    android:icon="@drawable/ic_refresh"
+                    android:title="⚡ Comparación Tiempo Real"/>
+
+            <item
+                    android:id="@+id/nav_configuracion"
+                    android:icon="@drawable/ic_settings"
+                    android:title="⚙️ Configuración"/>
+        </menu>
+    </item>
+
+</menu>

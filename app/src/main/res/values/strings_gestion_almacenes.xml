@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="titulo_gestion_almacenes">Gestión de Almacenes</string>
+    <string name="hint_nombre_almacen">Nombre del almacén</string>
+    <string name="hint_capacidad_maxima">Capacidad máxima</string>
+    <string name="btn_configurar">Configurar</string>
+    <string name="no_hay_almacenes">No hay almacenes configurados</string>
+    <string name="label_pallets_escaneados">Pallets Escaneados: %1$d</string>
+    <string name="label_capacidad_total">Capacidad Total: %1$d</string>
+    <string name="label_saturacion_promedio">Saturación Promedio: %1$s</string>
+</resources>
+

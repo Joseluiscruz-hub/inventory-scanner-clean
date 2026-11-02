@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:background="@drawable/header_gradient_premium"
+              android:gravity="center"
+              android:padding="24dp">
+
+    <!-- Fondo animado del header -->
+
+    <!-- Logo circular con sombra -->
+
+    <!-- Título del sistema -->
+    <androidx.cardview.widget.CardView
+            android:layout_width="205dp"
+            android:layout_height="118dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="40dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+    </androidx.cardview.widget.CardView>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="📱 Sistema PLANTA DE MANUFACTURA"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"
+            android:shadowColor="#000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="4"/>
+
+    <!-- Subtítulo -->
+    <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:lottie_fileName="header_animation.json"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="true"
+            android:alpha="0.2"/>
+    <TextView
+            android:layout_width="382dp"
+            android:layout_height="32dp"
+            android:text="Control de Inventarios"
+            android:textColor="#E3F2FD"
+            android:textSize="14sp"
+            android:shadowColor="#000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"/>
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_inventory"
+            android:scaleType="centerCrop"
+            android:padding="8dp"/>
+
+</LinearLayout>

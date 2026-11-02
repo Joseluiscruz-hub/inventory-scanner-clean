@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- PLANTA DE MANUFACTURA Brand Palette -->
+    <color name="brand_red">#D9232D</color>
+    <color name="brand_black">#212121</color>
+    <color name="brand_gold">#FFD700</color>
+    <color name="brand_white">#FFFFFF</color>
+
+    <!-- Material 3 Theme Colors -->
+
+    <!-- Primary -->
+    <color name="colorPrimary">@color/brand_red</color>
+    <color name="colorOnPrimary">@color/brand_white</color>
+    <color name="colorPrimaryContainer">#FBE9E7</color> <!-- A light red tint -->
+    <color name="colorOnPrimaryContainer">#4E0002</color> <!-- Dark red for text on light red container -->
+
+    <!-- Secondary -->
+    <color name="colorSecondary">#757575</color> <!-- Dark Gray -->
+    <color name="colorOnSecondary">@color/brand_white</color>
+    <color name="colorSecondaryContainer">#E0E0E0</color> <!-- Light Gray -->
+    <color name="colorOnSecondaryContainer">#2C2C2C</color>
+
+    <!-- Tertiary (for premium accents) -->
+    <color name="colorTertiary">@color/brand_gold</color>
+    <color name="colorOnTertiary">@color/brand_black</color>
+    <color name="colorTertiaryContainer">#FFF8DC</color> <!-- Light Gold -->
+    <color name="colorOnTertiaryContainer">#4D3B00</color>
+
+    <!-- Error -->
+    <color name="error">#B00020</color>
+    <color name="colorError">#B00020</color>
+    <color name="colorOnError">@color/brand_white</color>
+
+    <!-- Background and Surface -->
+    <color name="colorBackground">#FBFBFB</color>
+    <color name="colorOnBackground">@color/brand_black</color>
+    <color name="colorSurface">#FBFBFB</color>
+    <color name="colorOnSurface">@color/brand_black</color>
+    <color name="colorSurfaceVariant">#EEEEEE</color>
+    <color name="colorOnSurfaceVariant">#424242</color>
+    <color name="colorOutline">#BDBDBD</color>
+
+    <!-- Semantic colors from old file that might be used somewhere -->
+    <color name="success">#4CAF50</color>
+    <color name="warning">#FF9800</color>
+    <color name="brand_light_red">#FBE9E7</color>
+
+    <!-- Added to fix build errors -->
+    <color name="brand_dark_red">#B71C1C</color>
+    <color name="green">#4CAF50</color>
+    <color name="red">#D9232D</color>
+    <color name="brand_dark_gold">#FFA000</color>
+    <color name="brand_text_secondary">#757575</color>
+    <color name="primary">@color/colorPrimary</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="error_dark">#8C001A</color>
+
+    <!-- Missing semantic variants used in code -->
+    <color name="success_dark">#2E7D32</color>
+    <color name="success_light">#C8E6C9</color>
+    <color name="warning_dark">#EF6C00</color>
+    <color name="warning_light">#FFE0B2</color>
+    <color name="error_light">#FFCDD2</color>
+
+    <!-- Dark UI palette for comparison screens -->
+    <color name="colorBackgroundDark">#121212</color>
+    <color name="colorHeaderDark">#263238</color>
+    <color name="colorCardDark">#37474F</color>
+    <color name="textPrimaryLight">#FFFFFF</color>
+    <color name="textSecondaryLight">#B0BEC5</color>
+    <color name="accentBlue">#2196F3</color>
+    <color name="accentGreen">#4CAF50</color>
+    <color name="accentOrange">#FF9800</color>
+    <color name="accentRed">#F44336</color>
+
+    <!-- Colors for activity_inventario.xml -->
+    <color name="accent_600">#D9232D</color>
+    <color name="on_accent">#FFFFFF</color>
+    <color name="divider">#E0E0E0</color>
+
+    <!-- Premium gradient colors -->
+    <color name="gradient_start">#FF512F</color>
+    <color name="gradient_end">#DD2476</color>
+</resources>

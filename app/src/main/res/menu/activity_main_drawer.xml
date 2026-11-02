@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_inicio"
+            android:icon="@drawable/ic_home"
+            android:title="🏠 Inicio" />
+        <item
+            android:id="@+id/nav_capturar_inventario"
+            android:icon="@drawable/ic_camera"
+            android:title="📷 Capturar Inventario" />
+        <item
+            android:id="@+id/nav_dashboard"
+            android:icon="@drawable/ic_dashboard"
+            android:title="📊 Dashboard" />
+        <item
+            android:id="@+id/nav_resumen_inventario"
+            android:icon="@drawable/ic_summary"
+            android:title="📋 Resumen Inventario" />
+        <item
+            android:id="@+id/nav_restos"
+            android:icon="@drawable/ic_inventory"
+            android:title="@string/nav_restos" />
+    </group>
+
+    <item android:title="Comparación">
+        <menu>
+            <item
+                android:id="@+id/nav_comparar_inventarios"
+                android:icon="@drawable/ic_compare"
+                android:title="🔍 Comparar Inventarios" />
+            <item
+                android:id="@+id/nav_comparacion_tiempo_real"
+                android:icon="@drawable/ic_real_time"
+                android:title="⚡ Comparación Tiempo Real" />
+        </menu>
+    </item>
+
+    <item android:title="Gestión">
+        <menu>
+            <item
+                android:id="@+id/nav_gestion_almacenes"
+                android:icon="@drawable/ic_warehouse"
+                android:title="🏭 Gestión de Almacenes" />
+            <item
+                android:id="@+id/nav_ajuste_inventario"
+                android:icon="@drawable/ic_settings"
+                android:title="⚙️ Ajuste Inventario" />
+            <item
+                android:id="@+id/nav_gestion_reinicio"
+                android:icon="@drawable/ic_refresh"
+                android:title="🔄 Gestión de Reinicio" />
+        </menu>
+    </item>
+
+    <item android:title="Sistema">
+        <menu>
+            <item
+                android:id="@+id/nav_reiniciar_comparacion"
+                android:icon="@drawable/ic_refresh"
+                android:title="🔄 Reiniciar Comparación" />
+            <item
+                android:id="@+id/nav_reiniciar_completo"
+                android:icon="@drawable/ic_warning"
+                android:title="⚠️ Reinicio Completo" />
+            <item
+                android:id="@+id/nav_configuracion"
+                android:icon="@drawable/ic_settings"
+                android:title="⚙️ Configuración" />
+            <item
+                android:id="@+id/nav_mas_opciones"
+                android:icon="@drawable/ic_more"
+                android:title="➕ Más Opciones" />
+        </menu>
+    </item>
+
+</menu>

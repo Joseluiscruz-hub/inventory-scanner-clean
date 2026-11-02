@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Alias to satisfy setTheme(R.style.Theme_EscaneoDeMaterialesDEMO) -->
+    <style name="Theme_EscaneoDeMaterialesDEMO" parent="Theme.BrandApp"/>
+
+    <!-- Dialog Theme used in MaterialAlertDialogBuilder -->
+    <style name="BrandDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorError">@color/colorError</item>
+    </style>
+
+    <!-- Card style -->
+    <style name="Widget.App.CardView" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="contentPadding">16dp</item>
+    </style>
+
+    <!-- Text field style -->
+    <style name="Widget.App.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxStrokeColor">@color/brand_red</item>
+    </style>
+
+    <!-- Bottom Navigation Active Indicator -->
+    <style name="App.ActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/brand_red</item>
+        <item name="android:width">64dp</item>
+        <item name="android:height">32dp</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <!-- Alternative style name for bottom navigation indicator -->
+    <style name="Widget.App.BottomNavigationView.ActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/brand_red</item>
+        <item name="android:width">64dp</item>
+        <item name="android:height">32dp</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <!-- Material Button Styles -->
+    <style name="Widget.App.Button" parent="Widget.Material3.Button">
+        <item name="android:textColor">@color/brand_white</item>
+        <item name="backgroundTint">@color/brand_red</item>
+        <item name="cornerRadius">16dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.App.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:textColor">@color/brand_red</item>
+        <item name="strokeColor">@color/brand_red</item>
+        <item name="cornerRadius">16dp</item>
+    </style>
+
+    <style name="Widget.App.Button.Text" parent="Widget.Material3.Button.TextButton">
+        <item name="android:textColor">@color/brand_red</item>
+        <item name="rippleColor">@color/brand_light_red</item>
+    </style>
+
+    <style name="Widget.App.Button.Success" parent="Widget.Material3.Button">
+        <item name="android:textColor">@color/brand_white</item>
+        <item name="backgroundTint">@color/success</item>
+        <item name="cornerRadius">16dp</item>
+    </style>
+
+    <style name="Widget.App.Button.Warning" parent="Widget.Material3.Button">
+        <item name="android:textColor">@color/brand_black</item>
+        <item name="backgroundTint">@color/warning</item>
+        <item name="cornerRadius">16dp</item>
+    </style>
+
+    <style name="Widget.App.Button.Error" parent="Widget.Material3.Button">
+        <item name="android:textColor">@color/brand_white</item>
+        <item name="backgroundTint">@color/error</item>
+        <item name="cornerRadius">16dp</item>
+    </style>
+
+    <style name="BrandButton" parent="Widget.App.Button"/>
+
+    <!-- Estilos para las tarjetas de la pantalla de inicio -->
+    <style name="HomeCardContent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="HomeCardIcon">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:tint">?attr/colorPrimary</item>
+    </style>
+
+    <style name="HomeCardTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">?attr/textAppearanceTitleMedium</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="Widget.App.Toolbar" parent="Widget.Material3.Toolbar.OnSurface">
+        <item name="titleTextColor">?attr/colorOnPrimary</item>
+    </style>
+
+    <!-- Base compartida para que los overrides por API conserven Material3. -->
+    <style name="Base.PremiumTheme" parent="Theme.Material3.DayNight">
+        <item name="colorPrimary">@color/primary_deep_blue</item>
+        <item name="colorPrimaryContainer">@color/surface_dark_grey</item>
+        <item name="colorSecondary">@color/accent_gold</item>
+        <item name="colorSecondaryContainer">@color/surface_medium_grey</item>
+        <item name="colorSurface">@color/surface_light_grey</item>
+        <item name="colorOnSurface">@color/primary_elegant_black</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorOnSecondary">@color/primary_elegant_black</item>
+        <item name="colorError">@color/error_red</item>
+        <item name="colorOnError">@android:color/white</item>
+
+        <!-- Configuración de la barra de estado -->
+        <item name="android:statusBarColor">@color/primary_deep_blue</item>
+        <item name="android:navigationBarColor">@color/surface_light_grey</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+        <!-- Configuraciones de ventana -->
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+
+    <!-- Tema Principal Premium -->
+    <style name="PremiumTheme" parent="Base.PremiumTheme" />
+
+    <!-- Tema Premium sin ActionBar -->
+    <style name="PremiumTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+
+    <!-- Tema Premium para Scanner -->
+    <style name="PremiumTheme.Scanner" parent="PremiumTheme.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <!-- Estilo para NavigationView -->
+    <style name="NavigationView.TextAppearance" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <!-- Estilo para botones premium -->
+    <style name="PremiumButton" parent="Widget.Material3.Button">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="cornerRadius">@dimen/corner_radius_medium</item>
+        <item name="android:elevation">@dimen/elevation_buttons</item>
+    </style>
+
+    <!-- Estilo para cards premium -->
+    <style name="PremiumCard" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">@dimen/corner_radius_large</item>
+        <item name="cardElevation">@dimen/elevation_cards</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="strokeColor">@color/accent_platinum</item>
+        <item name="cardBackgroundColor">?attr/colorSurface</item>
+    </style>
+
+    <!-- Estilo para texto de encabezados premium -->
+    <style name="PremiumHeadline" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/primary_elegant_black</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+</resources>

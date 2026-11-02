@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Home Screen -->
+    <string name="home_greeting">Bienvenido de Nuevo</string>
+    <string name="home_subtitle">Gestión de Inventario Inteligente</string>
+    <string name="home_header_logo_cd">Logo de la compañía</string>
+
+    <!-- Quick Stats Section -->
+    <string name="home_quick_stats_title">Resumen Rápido</string>
+    <string name="home_stat_scanned_label">Escaneados</string>
+    <string name="home_stat_synced_label">Inventarios</string>
+
+    <!-- Primary Action Section -->
+    <string name="home_primary_actions_title">Acciones Principales</string>
+    <string name="home_scan_title">Iniciar Escaneo</string>
+    <string name="home_scan_subtitle">Comienza a registrar materiales</string>
+    <string name="home_scan_icon_cd">Icono de escaneo</string>
+    <string name="home_scan_arrow_cd">Continuar</string>
+
+    <!-- Secondary Action Buttons -->
+    <string name="home_view_summary_button">Ver Resumen</string>
+    <string name="home_compare_button">Comparar</string>
+
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="splash_brand_name">PLANTA DE MANUFACTURA</string>
+    <string name="splash_product_name">Inventory Scanner Pro</string>
+    <string name="splash_tagline">PRECISIÓN · VELOCIDAD · TRAZABILIDAD</string>
+    <string name="splash_accessibility_label">Inventory Scanner Pro. Precisión, velocidad y trazabilidad.</string>
+</resources>

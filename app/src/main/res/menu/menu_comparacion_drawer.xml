@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/nav_cargar_sistema"
+                android:icon="@drawable/ic_folder"
+                android:title="📁 Cargar Inventario Sistema"/>
+
+        <item
+                android:id="@+id/nav_iniciar_escaneo"
+                android:icon="@drawable/ic_play_arrow"
+                android:title="🚀 Iniciar Escaneo"/>
+    </group>
+
+    <item android:title="⚙️ Controles">
+        <menu>
+            <item
+                    android:id="@+id/nav_pausar_tiempo_real"
+                    android:icon="@drawable/ic_pause"
+                    android:title="⏸️ Pausar Tiempo Real"/>
+
+            <item
+                    android:id="@+id/nav_actualizar_manual"
+                    android:icon="@drawable/ic_refresh"
+                    android:title="🔄 Actualizar Manual"/>
+        </menu>
+    </item>
+
+    <item android:title="📊 Gestión de Datos">
+        <menu>
+            <item
+                    android:id="@+id/nav_exportar_comparacion"
+                    android:icon="@drawable/ic_share"
+                    android:title="📤 Exportar Comparación"/>
+
+            <item
+                    android:id="@+id/nav_limpiar_datos"
+                    android:icon="@drawable/ic_delete"
+                    android:title="🗑️ Limpiar Datos"/>
+        </menu>
+    </item>
+
+    <item android:title="ℹ️ Información">
+        <menu>
+            <item
+                    android:id="@+id/nav_instrucciones"
+                    android:icon="@drawable/ic_info"
+                    android:title="📋 Ver Instrucciones"/>
+
+            <item
+                    android:id="@+id/nav_configuracion"
+                    android:icon="@drawable/ic_settings"
+                    android:title="⚙️ Configuración"/>
+        </menu>
+    </item>
+
+</menu>

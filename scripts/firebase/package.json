@@ -1,0 +1,14 @@
+{
+  "name": "inventory-scanner-firebase-admin-tools",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "clean-reference": "node clean-corrupt-reference.mjs",
+    "set-role": "node set-user-role.mjs",
+    "backfill-planta": "node backfill-planta.mjs",
+    "migrate-inventarios-ids": "node migrate-inventarios-plant-stable.mjs"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.0.0"
+  }
+}

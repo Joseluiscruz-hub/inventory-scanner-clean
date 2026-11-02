@@ -1,0 +1,185 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#181C23">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Nueva sección de capacidad de almacén -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="#263238"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🏭 Gestión de Capacidad de Almacén"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:hint="Nombre del Almacén"
+                        app:hintTextColor="#B0BEC5"
+                        app:boxStrokeColor="#4CAF50">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etNombreAlmacen"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#FFFFFF"
+                            android:textColorHint="#B0BEC5"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:hint="Capacidad Máxima"
+                        app:hintTextColor="#B0BEC5"
+                        app:boxStrokeColor="#4CAF50"
+                        app:suffixText="pallets">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etCapacidadMaxima"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:textColor="#FFFFFF"
+                            android:textColorHint="#B0BEC5"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnConfigurarAlmacen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="➕ Configurar Almacén"
+                    android:layout_marginBottom="16dp"
+                    android:backgroundTint="#4CAF50"/>
+
+                <!-- RecyclerView para mostrar almacenes configurados -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerAlmacenes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:visibility="gone"/>
+
+                <!-- Resumen total de saturación -->
+                <LinearLayout
+                    android:id="@+id/layoutResumenSaturacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_rounded_light"
+                    android:padding="12dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="📊 Resumen General"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tvTotalPalletsEscaneados"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Total Pallets Escaneados: 0"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/tvCapacidadTotalConfigurada"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Capacidad Total Configurada: 0"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/tvSaturacionPromedio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Saturación Promedio: 0%"
+                        android:textSize="14sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Botones existentes -->
+        <Button
+            android:id="@+id/btnResumen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📊 Resumen"
+            android:layout_marginTop="12dp"/>
+
+        <Button
+            android:id="@+id/btnAlternarVista"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ver Detalle"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/tvSinDatos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No hay datos para mostrar."
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_marginTop="12dp"
+            android:textSize="16sp"/>
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pieChart"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="8dp"/>
+
+        <Button
+            android:id="@+id/btnExportar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📧 Exportar y Enviar"
+            android:layout_marginTop="16dp"/>
+
+        <TableLayout
+                android:id="@+id/tablaComparacion"
+                android:layout_width="match_parent"
+                android:layout_height="405dp"
+                android:stretchColumns="*"
+                android:layout_marginTop="16dp"/>
+    </LinearLayout>
+</ScrollView>

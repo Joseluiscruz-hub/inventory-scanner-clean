@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/ic_search"
+        android:title="Buscar"
+        android:contentDescription="Buscar"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/sync"
+        android:icon="@drawable/ic_sync"
+        android:title="Sincronizar"
+        android:contentDescription="Sincronizar datos"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/more"
+        android:title="Más"
+        android:contentDescription="Más opciones"
+        app:showAsAction="never" />
+</menu>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="comparacion_sku_label">SKU</string>
+    <string name="comparacion_estado_label">Estado</string>
+    <string name="comparacion_descripcion_placeholder">Descripción</string>
+    <string name="comparacion_tipo_emoji">📦 </string>
+    <string name="comparacion_delta_symbol">Δ </string>
+    <string name="comparacion_tipo_tarima_default">N/A</string>
+    <string name="comparacion_escaneado_label">📱 Escaneado: %1$d</string>
+    <string name="comparacion_sistema_label">📊 Sistema: %1$d</string>
+</resources>
+

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                   xmlns:tools="http://schemas.android.com/tools"
+                                   android:id="@+id/cardContainer"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   android:layout_margin="4dp"
+                                   app:cardBackgroundColor="#37474F"
+                                   app:cardCornerRadius="8dp"
+                                   app:cardElevation="4dp">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+        <!-- Header con SKU y estado -->
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+            <TextView
+                    android:id="@+id/textSku"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    tools:text="@string/comparacion_sku_label"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
+
+            <TextView
+                    android:id="@+id/textEstado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/comparacion_estado_label"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:padding="6dp"
+                    android:background="@android:color/transparent"/>
+        </LinearLayout>
+
+        <!-- Descripción -->
+        <TextView
+                android:id="@+id/textDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="@string/comparacion_descripcion_placeholder"
+                android:textColor="#B0BEC5"
+                android:textSize="12sp"
+                android:layout_marginBottom="6dp"/>
+
+        <!-- Info adicional: Tipo y Diferencia -->
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="6dp">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/comparacion_tipo_emoji"
+                    android:textSize="12sp"/>
+
+            <TextView
+                    android:id="@+id/textTipoTarima"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    tools:text="@string/comparacion_tipo_tarima_default"
+                    android:textColor="#4CAF50"
+                    android:textSize="12sp"
+                    android:textStyle="bold"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/comparacion_delta_symbol"
+                    android:textColor="#FF9800"
+                    android:textSize="12sp"
+                    android:textStyle="bold"/>
+
+            <TextView
+                    android:id="@+id/textDiferencia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="0"
+                    android:textColor="#FF9800"
+                    android:textSize="12sp"
+                    android:textStyle="bold"/>
+        </LinearLayout>
+
+        <!-- Cantidades: Escaneado vs Sistema -->
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:id="@+id/textEscaneado"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    tools:text="@string/comparacion_escaneado_label"
+                    android:textColor="#4CAF50"
+                    android:textSize="11sp"
+                    android:textStyle="bold"/>
+
+            <TextView
+                    android:id="@+id/textInventario"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    tools:text="@string/comparacion_sistema_label"
+                    android:textColor="#2196F3"
+                    android:textSize="11sp"
+                    android:textStyle="bold"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colores Primarios Premium -->
+    <color name="primary_deep_blue">#1A237E</color>
+    <color name="primary_elegant_black">#121212</color>
+    <color name="accent_gold">#FFD700</color>
+    <color name="accent_platinum">#E5E4E2</color>
+
+    <!-- Colores de Superficie -->
+    <color name="surface_dark_grey">#1E1E1E</color>
+    <color name="surface_medium_grey">#2D2D2D</color>
+    <color name="surface_light_grey">#F5F5F5</color>
+
+    <!-- Colores de Acento Sofisticados -->
+    <color name="success_green">#4CAF50</color>
+    <color name="warning_amber">#FFC107</color>
+    <color name="error_red">#F44336</color>
+    <color name="info_blue">#2196F3</color>
+
+    <!-- Esquema de colores premium anterior (mantenemos para compatibilidad) -->
+    <color name="premium_accent_primary">#1A237E</color>
+    <color name="premium_accent_primary_variant">#3700B3</color>
+    <color name="premium_accent_secondary">#03DAC6</color>
+    <color name="premium_accent_success">#4CAF50</color>
+    <color name="premium_accent_warning">#FF9800</color>
+    <color name="premium_accent_error">#F44336</color>
+
+    <!-- Colores dorados premium -->
+    <color name="premium_accent_gold">#FFD700</color>
+    <color name="premium_accent_gold_dark">#FFC107</color>
+    <color name="premium_accent_gold_light">#FFF9C4</color>
+
+    <!-- Colores de superficie premium -->
+    <color name="premium_surface_background">#F5F5F5</color>
+    <color name="premium_surface_variant">#F5F5F5</color>
+    <color name="premium_card_background">#FFFFFF</color>
+    <color name="premium_card_stroke">#E5E4E2</color>
+
+    <!-- Colores de texto premium -->
+    <color name="premium_text_primary">#121212</color>
+    <color name="premium_text_secondary">#757575</color>
+    <color name="premium_text_tertiary">#9E9E9E</color>
+    <color name="premium_text_on_primary">#FFFFFF</color>
+    <color name="premium_text_on_primary_variant">#F5F5F5</color>
+
+    <!-- Colores de chip premium -->
+    <color name="premium_chip_text">#1B5E20</color>
+
+    <!-- Colores de ripple premium -->
+    <color name="premium_ripple_primary">#BB1A237E</color>
+    <color name="premium_ripple_secondary">#BB03DAC6</color>
+    <color name="premium_ripple_gold">#BBFFD700</color>
+</resources>

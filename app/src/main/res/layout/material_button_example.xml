@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ejemplos de Botones Material3"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Botón Material3 Estándar -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEscanearMaterial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Escanear Material"
+        style="@style/Widget.Material3.Button"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Botón Material3 con Estilo Personalizado -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnPersonalizado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Botón Personalizado"
+        style="@style/Widget.App.Button"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Botón Material3 Outlined -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnOutlined"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Botón Outlined"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Botón Material3 Text -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Botón Text"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Botón Material3 con Icono -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnConIcono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Botón con Icono"
+        app:icon="@drawable/ic_add"
+        style="@style/Widget.Material3.Button"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Botón Material3 con Colores Personalizados -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnColores"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Botón con Colores"
+        android:backgroundTint="#0066B3"
+        android:textColor="#FFFFFF"
+        style="@style/Widget.Material3.Button"
+        android:layout_marginBottom="8dp"/>
+
+</LinearLayout>

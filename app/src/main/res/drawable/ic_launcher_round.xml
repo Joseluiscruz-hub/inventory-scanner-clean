@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Fallback sin calificadores para evitar fallos al resolver R.drawable.ic_launcher_round. -->
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@mipmap/ic_launcher_round"
+    android:inset="0dp" />

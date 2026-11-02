@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:padding="16dp"
+              tools:context=".InventoryComparisonActivity">
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Inventario de Sistema"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginBottom="4dp"/>
+    <Button
+            android:id="@+id/btnImportarSistema"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Importar Sistema"
+            android:layout_marginBottom="12dp"/>
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Inventario Escaneado"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginBottom="4dp"/>
+
+    <Button
+            android:id="@+id/btnImportarEscaneado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Importar Escaneado"
+            android:layout_marginBottom="16dp"/>
+
+    <Button
+            android:id="@+id/btnCompararInventarios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Comparar Inventarios"
+            android:layout_marginBottom="16dp"/>
+
+    <TextView
+            android:layout_width="376dp"
+            android:layout_height="168dp"
+            android:text="Resultados de la comparación"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="109dp"
+            android:layout_weight="1">
+
+        <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TableLayout
+                    android:id="@+id/tablaComparacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="0"
+                    android:layout_marginTop="8dp"/>
+        </HorizontalScrollView>
+    </ScrollView>
+</LinearLayout>

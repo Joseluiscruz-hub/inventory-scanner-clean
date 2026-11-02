@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dashboard_title">Dashboard de Control</string>
+    <string name="dashboard_subtitle">Rendimiento y estado del inventario</string>
+    <string name="dashboard_premium_chip">Premium</string>
+    <string name="dashboard_kpi_title">Indicadores Clave</string>
+    <string name="dashboard_kpi_scanned_label">Materiales Escaneados</string>
+    <string name="dashboard_kpi_sync_label">Sincronización</string>
+    <string name="dashboard_chart_title">Distribución de Materiales</string>
+    <string name="dashboard_quick_actions_title">Acciones Rápidas</string>
+    <string name="dashboard_scan_button">Escanear</string>
+    <string name="dashboard_view_inventory_button">Ver Inventario</string>
+    <string name="dashboard_header_animation_cd" translatable="false">Logo animado</string>
+</resources>

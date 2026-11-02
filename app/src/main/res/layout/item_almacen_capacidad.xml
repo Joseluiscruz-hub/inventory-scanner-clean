@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   android:layout_margin="4dp"
+                                   app:cardCornerRadius="8dp"
+                                   app:cardElevation="2dp"
+                                   app:cardBackgroundColor="#37474F">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+            <TextView
+                    android:id="@+id/tvNombreAlmacen"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Bodega Nueva"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+            <TextView
+                    android:id="@+id/tvPorcentajeSaturacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="50%"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:padding="4dp"
+                    android:background="@drawable/bg_estado_rounded"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📦 Escaneado: "
+                    android:textColor="#B0BEC5"
+                    android:textSize="14sp"/>
+
+            <TextView
+                    android:id="@+id/tvPalletsEscaneados"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="1200"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🏭 Capacidad: "
+                    android:textColor="#B0BEC5"
+                    android:textSize="14sp"/>
+
+            <TextView
+                    android:id="@+id/tvCapacidadMaxima"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2400"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
+        </LinearLayout>
+
+        <ProgressBar
+                android:id="@+id/progressSaturacion"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:max="100"
+                android:progress="50"/>
+
+        <TextView
+                android:id="@+id/tvEstadoSaturacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Capacidad moderada"
+                android:textColor="#FF9800"
+                android:textSize="12sp"
+                android:gravity="center"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+            <Button
+                    android:id="@+id/btnEditarAlmacen"
+                    android:layout_width="112dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="4dp"
+                    android:text="✏️ Editar"
+                    android:textSize="12sp"
+                    android:backgroundTint="#2196F3"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"/>
+
+            <Button
+                    android:id="@+id/btnEliminarAlmacen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="4dp"
+                    android:text="🗑️ Eliminar"
+                    android:textSize="12sp"
+                    android:backgroundTint="#F44336"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

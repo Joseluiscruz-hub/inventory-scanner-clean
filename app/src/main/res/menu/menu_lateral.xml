@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/nav_home"
+                android:icon="@drawable/ic_home"
+                android:title="@string/nav_home"/>
+        <item
+                android:id="@+id/nav_inventory"
+                android:icon="@drawable/ic_inventory"
+                android:title="@string/nav_inventory"/>
+        <item
+                android:id="@+id/nav_restos"
+                android:icon="@drawable/ic_inventory"
+                android:title="@string/nav_restos"/>
+        <item
+                android:id="@+id/nav_capture"
+                android:icon="@drawable/ic_scan"
+                android:title="@string/nav_capture"/>
+        <item
+                android:id="@+id/nav_comparison"
+                android:icon="@drawable/ic_compare"
+                android:title="@string/nav_comparison"/>
+    </group>
+
+    <item android:title="@string/nav_section_other">
+        <menu>
+            <item
+                    android:id="@+id/nav_settings"
+                    android:icon="@drawable/ic_settings"
+                    android:title="@string/nav_settings"/>
+            <item
+                    android:id="@+id/nav_about"
+                    android:icon="@drawable/ic_info"
+                    android:title="@string/nav_about"/>
+        </menu>
+    </item>
+
+</menu>
